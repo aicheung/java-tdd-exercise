@@ -1,6 +1,6 @@
 package tdd;
 
-public class Money {
+public abstract class Money {
     protected int amount;
 
     @Override
@@ -10,4 +10,14 @@ public class Money {
         }
         return ((Money) object).amount == this.amount;
     }
+
+    public static Money dollar(int amount) {
+        return new Dollar(amount);
+    }
+
+    public static Money franc(int amount) {
+        return new Franc(amount);
+    }
+
+    public abstract Money times(int amount);
 }
