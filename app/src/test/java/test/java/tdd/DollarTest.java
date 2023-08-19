@@ -23,6 +23,11 @@ public class DollarTest {
         assertNotEquals(new Dollar(5), new Dollar(6));
         assertNotEquals(new Dollar(5), null);
         assertNotEquals(new Dollar(5), "12312");
+        assertEquals(new Franc(5), new Franc(5));
+        assertEquals(new Franc(6), new Franc(6));
+        assertNotEquals(new Franc(5), new Franc(6));
+        assertNotEquals(new Franc(5), null);
+        assertNotEquals(new Franc(5), "12312");
     }
 
     @Test
