@@ -10,4 +10,12 @@ public class Dollar {
     public Dollar times(int multiplier) {
         return new Dollar(amount * multiplier);
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if(object == null || !(object instanceof Dollar)) {
+            return false;
+        }
+        return ((Dollar) object).amount == this.amount;
+    }
 }
