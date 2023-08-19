@@ -5,8 +5,6 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import tdd.Dollar;
-import tdd.Franc;
 import tdd.Money;
 
 public class DollarTest {
@@ -24,30 +22,13 @@ public class DollarTest {
         assertNotEquals(Money.dollar(5), Money.dollar(6));
         assertNotEquals(Money.dollar(5), null);
         assertNotEquals(Money.dollar(5), "12312");
-        assertEquals(Money.franc(5), Money.franc(5));
-        assertEquals(Money.franc(6), Money.franc(6));
-        assertNotEquals(Money.franc(5), Money.franc(6));
-        assertNotEquals(Money.franc(5), null);
-        assertNotEquals(Money.franc(5), "12312");
 
         assertNotEquals(Money.franc(5), Money.dollar(5));
-    }
-
-    @Test
-    public void testFrancMultiplication() {
-        Money five = Money.franc(5);
-        assertEquals(Money.franc(10), five.times(2));
-        assertEquals(Money.franc(15), five.times(3));
     }
 
     @Test
     public void testCurrency() {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
-    }
-
-    @Test
-    public void testDifferentClassEquality() {
-        assertEquals(new Franc(10, "CHF"), new Money(10, "CHF"));
     }
 }
